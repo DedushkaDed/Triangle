@@ -26,18 +26,17 @@ Route::get('about-us', function () {
 
 Route::get('about-us/{abouts}', function ($slug) {
 
-    $sPath = __DIR__ . "/../resources/text-data/{$slug}.html";
-    ddd($sPath);
     try {
+        $sPath = __DIR__ . "/../resources/text-data/{$slug}.html";
         file_get_contents($sPath);
     } catch (Exception $exception) {
         return redirect('/');
-//        abort(404);
     }
 
-    $aData = file_get_contents($sPath);
-    return view($slug, [
-        'heading' => $aData
-    ]);
+//    Кешируем страницу на 24ч
+    $aData = cache()->remember("abouts.{$slug}", now()->addHours(24), function () use ($sPath) {
+        return file_get_contents($sPath);
+    });
 
+    return view($slug, ['heading' => $aData]);
 })->where('abouts', '[A-z_\-]+');
