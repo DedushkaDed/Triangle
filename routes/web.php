@@ -24,11 +24,10 @@ Route::get('about-us', function () {
     return view('about-us');
 });
 
-Route::get('about-us/{slug}', function ($slug) {
+Route::get('about-us/{abouts}', function ($slug) {
 
     $sPath = __DIR__ . "/../resources/text-data/{$slug}.html";
     ddd($sPath);
-
     try {
         file_get_contents($sPath);
     } catch (Exception $exception) {
@@ -36,11 +35,9 @@ Route::get('about-us/{slug}', function ($slug) {
 //        abort(404);
     }
 
-
     $aData = file_get_contents($sPath);
-
-
     return view($slug, [
         'heading' => $aData
     ]);
-});
+
+})->where('abouts', '[A-z_\-]+');
