@@ -24,6 +24,7 @@ Route::get('/', function () {
 
 Route::get('/{slug}', function ($slug) {
     return view($slug, [
-        'heading' => About::findPage($slug)
+        'heading' => About::getHeadersData($slug),
+        'data' => About::getInsideData($slug)
     ]);
 })->where('slug', '[A-z_\-]+');
