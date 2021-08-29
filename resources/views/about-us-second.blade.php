@@ -113,7 +113,9 @@
             <div class="row">
                 <div class="action">
                     <div class="col-sm-12">
-                        <?= $heading ?>
+                        <?php foreach($heading as $aItem) : ?>
+                        <h1><?= $aItem->title; ?></h1>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>

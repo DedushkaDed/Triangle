@@ -113,7 +113,9 @@
             <div class="row">
                 <div class="action">
                     <div class="col-sm-12">
-                        <?= $heading ?>
+                        <?php foreach($heading as $aItem) : ?>
+                        <h1><?= $aItem->title; ?></h1>
+                        <?php endforeach ?>
                     </div>
                 </div>
             </div>
@@ -129,8 +131,10 @@
                 <img src="images/aboutus/1.png" class="img-responsive" alt="">
             </div>
             <div class="col-sm-6 padding-top">
-                <p>Shoulder bresaola sausage consequat ground round duis excepteur exercitation landjaeger sunt. Duis officia sed frankfurter dolore pastrami tenderloin.</p>
-                <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                <p>Shoulder bresaola sausage consequat ground round duis excepteur exercitation landjaeger sunt. Duis
+                    officia sed frankfurter dolore pastrami tenderloin.</p>
+                <p>When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has
+                    survived not only five centuries.</p>
             </div>
         </div>
     </div>
@@ -139,33 +143,18 @@
 <section id="services">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="300ms">
+            <?php foreach ($data as $aItem) : ?>
+            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="<?=$aItem->dataWowDuration?>"
+                 data-wow-delay="<?=$aItem->dataWowDelay?>">
                 <div class="single-service">
                     <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
                         <img src="images/home/icon1.png" alt="">
                     </div>
-                    <h2>Incredibly Responsive</h2>
-                    <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    <h2><?=$aItem->title?></h2>
+                    <p><?=$aItem->body?></p>
                 </div>
             </div>
-            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                <div class="single-service">
-                    <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
-                        <img src="images/home/icon2.png" alt="">
-                    </div>
-                    <h2>Superior Typography</h2>
-                    <p>Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.</p>
-                </div>
-            </div>
-            <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
-                <div class="single-service">
-                    <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
-                        <img src="images/home/icon3.png" alt="">
-                    </div>
-                    <h2>Swift Page Builder</h2>
-                    <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.</p>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
@@ -195,10 +184,13 @@
 <section id="team">
     <div class="container">
         <div class="row">
-            <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Meet the Team</h1>
-            <p class="text-center wow fadeInDown" data-wow-duration="400ms" data-wow-delay="400ms">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
+            <h1 class="title text-center wow fadeInDown" data-wow-duration="500ms" data-wow-delay="300ms">Meet the
+                Team</h1>
+            <p class="text-center wow fadeInDown" data-wow-duration="400ms" data-wow-delay="400ms">Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. <br>
                 Ut enim ad minim veniam, quis nostrud </p>
-            <div id="team-carousel" class="carousel slide wow fadeIn" data-ride="carousel" data-wow-duration="400ms" data-wow-delay="400ms">
+            <div id="team-carousel" class="carousel slide wow fadeIn" data-ride="carousel" data-wow-duration="400ms"
+                 data-wow-delay="400ms">
                 <!-- Indicators -->
                 <ol class="carousel-indicators visible-xs">
                     <li data-target="#team-carousel" data-slide-to="0" class="active"></li>
@@ -395,7 +387,8 @@
                             <a href="#"><img src="images/home/profile1.png" alt=""></a>
                         </div>
                         <div class="media-body">
-                            <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
+                            <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.
+                            </blockquote>
                             <h3><a href="#">- Jhon Kalis</a></h3>
                         </div>
                     </div>
@@ -404,7 +397,9 @@
                             <a href="#"><img src="images/home/profile2.png" alt=""></a>
                         </div>
                         <div class="media-body">
-                            <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
+                            <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison
+                                eiusmod.
+                            </blockquote>
                             <h3><a href="">- Abraham Josef</a></h3>
                         </div>
                     </div>
@@ -436,10 +431,12 @@
                             <input type="text" name="name" class="form-control" required="required" placeholder="Name">
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            <input type="email" name="email" class="form-control" required="required"
+                                   placeholder="Email Id">
                         </div>
                         <div class="form-group">
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"
+                                      placeholder="Your text here"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" name="submit" class="btn btn-submit" value="Submit">
