@@ -61,8 +61,8 @@
                     <li><a href="/">Home</a></li>
                     <li class="dropdown active"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
-                            <li><a class="active" href="aboutus">About</a></li>
-                            <li><a href="about-us/about-second">About 2</a></li>
+                            <li><a class="active" href="about-us">About</a></li>
+                            <li><a href="about-us-second">About 2</a></li>
                             <li><a href="service">Services</a></li>
                             <li><a href="pricing">Pricing</a></li>
                             <li><a href="contact">Contact us</a></li>
@@ -113,8 +113,7 @@
             <div class="row">
                 <div class="action">
                     <div class="col-sm-12">
-                        <h1 class="title">About Us</h1>
-                        <p>Why our Clients love to work with us.</p>
+                        <?= $heading ?>
                     </div>
                 </div>
             </div>

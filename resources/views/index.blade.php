@@ -59,11 +59,11 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index">Home</a></li>
+                    <li class="active"><a href="/">Главная страница</a></li>
                     <li class="dropdown"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
                         <ul role="menu" class="sub-menu">
                             <li><a href="about-us">About</a></li>
-                            <li><a href="about-us/about-second">About 2</a></li>
+                            <li><a href="about-us-second">About 2</a></li>
                             <li><a href="service">Services</a></li>
                             <li><a href="pricing">Pricing</a></li>
                             <li><a href="contact">Contact us</a></li>
